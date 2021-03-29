@@ -1,0 +1,311 @@
+
+.cards_inrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.box {
+  /*     margin: -1.5rem; */
+  width: 90%;
+  height: 100%;
+      border-radius: 0px;
+      box-shadow: 0px 0rem 1rem 0px #3a3939;
+      background-color: white;
+      display: inline-block;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      transition: 1s all;
+      text-align: center;
+      padding: 1rem;
+      padding-bottom: 40px;
+      z-index: 3;
+  }
+
+  .box :is(h1,h2) {
+    font-size: 1.2xem;
+    color: red;
+    line-height: 100%;
+  }
+
+  .box :is(p) {
+    padding-top: 40px;
+    line-height: normal;
+  }
+
+  .box:hover {
+    -ms-transform: scale(1.2); /* IE 9 */
+    -webkit-transform: scale(1.2); /* Safari 3-8 */
+    transform: scale(1.2); 
+    box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.2), 0 0px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+    
+  .box:nth-child(1) {
+    transform: scale(0.75);
+    z-index: -1;
+    left: 18%;
+    background-color: rgb(70, 68, 68);
+  }
+  
+  
+  .box:nth-child(2) {
+    transform: scale(0.85);
+    z-index: 1;
+    left: 5%;
+    background-color:rgb(212, 211, 211);
+  } 
+
+  .box:nth-child(2):hover {
+    -ms-transform: scale(1); /* IE 9 */
+    -webkit-transform: scale(1); /* Safari 3-8 */
+    transform: scale(1); 
+    box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.2), 0 0px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+.box:nth-child(3) {
+  transform: scale(1);
+  z-index: 2;
+  background-color: white;
+}
+.box:nth-child(3):hover {
+  -ms-transform: scale(1.2); /* IE 9 */
+  -webkit-transform: scale(1.2); /* Safari 3-8 */
+  transform: scale(1.2); 
+  box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.2), 0 0px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.box:nth-child(4) {
+  transform: scale(0.85);
+  z-index: 1;
+  left: -5%;  
+  background-color: rgb(212, 211, 211);
+}
+
+.box:nth-child(4):hover {
+  -ms-transform: scale(1); /* IE 9 */
+  -webkit-transform: scale(1); /* Safari 3-8 */
+  transform: scale(1); 
+  box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.2), 0 0px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.box:nth-child(5) {
+  transform: scale(0.75);
+  z-index: -1;
+  left: -18%;
+  background-color: rgb(70, 68, 68);
+}
+
+.img_Indbox {
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  width: 50%;
+}
+
+
+
+.inactive {
+  background-color:rgb(224, 219, 219);
+}
+
+.activeCard {
+  border: 2px solid rgb(224, 219, 219);
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.cardButton {
+  border-radius: 0px;
+  background-color: black;
+  box-shadow: 0px 0px 0rem 0px;
+  color: white;
+  height:3rem;
+  width: 80%;
+}
+
+.cardButton:hover {
+  box-shadow: 0 0px 10px 0 white, 0 0px 20px gray;
+}
+
+.blankBox {
+  background-color:rgb(49, 49, 49);
+}
+
+.blankContent {
+  visibility: hidden;  
+}
+
+
+/***** The Card swapping code *******/
+.move-out-from-left {
+  animation: moveOutLeft 0.5s ease-in-out;
+}
+
+.move-out-from-right {
+  animation: moveOutRight 0.5s ease-in-out;
+}
+
+.move-to-position5-from-left {
+  animation: moveToP5Left 0.5s ease-in-out;
+}
+
+.move-to-position4-from-left {
+  animation: moveToP4Left 0.5s ease-in-out;
+}
+
+.move-to-position3-from-left {
+  animation: moveToP3Left 0.5s ease-in-out;
+}
+
+.move-to-position2-from-left {
+  animation: moveToP2Left 0.5s ease-in-out;
+}
+
+
+.move-to-position1-from-left{
+  animation: moveToP1Left 0.5s ease-in-out;
+}
+
+.move-to-position5-from-right{
+  animation: moveToP5Right 0.5s ease-in-out;
+}
+.move-to-position4-from-right{
+  animation: moveToP4Right 0.5s ease-in-out;
+}
+.move-to-position3-from-right{
+  animation: moveToP3Right 0.5s ease-in-out;
+}
+.move-to-position2-from-right{
+  animation: moveToP2Right 0.5s ease-in-out;
+}
+.move-to-position1-from-right{
+  animation: moveToP1Right 0.5s ease-in-out;
+}
+
+@keyframes moveOutLeft {
+  0% {
+      transform: scale(0.75) translateX(0%);
+      opacity: 1;
+  }
+  50% {
+      transform: scale(0.5) translateX(-150%);
+      opacity: 0.5;
+  }
+  100% {
+      transform: scale(0.25) translateX(0%);
+      opacity: 0;
+  }
+}
+
+@keyframes moveOutRight {
+  0% {
+      transform: scale(0.75) translateX(0%);
+      opacity: 1;
+  }
+  50% {
+      transform: scale(0.5) translateX(150%);
+      opacity: 0.5;
+  }
+  100% {
+      transform: scale(0.25) translateX(0%);
+      opacity: 0;
+  }
+}
+
+
+@keyframes moveToP5Left {
+  from {
+      transform: scale(0.75) translateX(100%);
+  }
+  to {
+      transform: scale(0.75) translateX(0);
+  }
+}
+
+@keyframes moveToP4Left {
+  from {
+      transform: scale(0.75) translateX(100%);
+  }
+  to {
+      transform: scale(0.85) translateX(0);
+  }
+}
+
+@keyframes moveToP3Left {
+  from {
+      transform: scale(0.85) translateX(100%);
+  }
+  to {
+      transform: scale(1) translateX(0);
+  }
+}
+
+@keyframes moveToP2Left {
+  from {
+      transform: scale(1) translateX(100%);
+  }
+  to {
+      transform: scale(0.85) translateX(0);
+  }
+}
+
+@keyframes moveToP1Left {
+  from {
+      transform: scale(0.85) translateX(100%);
+  }
+  to {
+      transform: scale(0.75) translateX(0);
+  }
+}
+
+
+@keyframes moveToP1Right {
+  from {
+      transform: scale(0.75) translateX(-100%);
+  }
+  to {
+      transform: scale(0.75) translateX(0);
+  }
+}
+
+@keyframes moveToP2Right {
+  from {
+      transform: scale(0.75) translateX(-100%);
+  }
+  to {
+      transform: scale(0.85) translateX(0);
+  }
+}
+
+@keyframes moveToP3Right {
+  from {
+      transform: scale(0.85) translateX(-100%);
+  }
+  to {
+      transform: scale(1) translateX(0);
+  }
+}
+
+@keyframes moveToP4Right {
+  from {
+      transform: scale(1) translateX(-100%);
+  }
+  to {
+      transform: scale(0.85) translateX(0);
+  }
+}
+
+@keyframes moveToP5Right {
+  from {
+      transform: scale(0.85) translateX(-100%);
+  }
+  to {
+      transform: scale(0.75) translateX(0);
+  }
+}

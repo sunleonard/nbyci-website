@@ -1,0 +1,184 @@
+/* Basic styling */
+:root {
+    --navcolor: #ffffff00;
+    --subcolor: #ffffff00;
+  }
+  
+  * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+    }
+    nav {
+      background: var(--navcolor);
+      padding: 0 15px;
+      z-index: 5;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      
+    }
+    nav a {
+      color: black;
+      text-decoration: none;
+    }
+    nav .menu, nav .submenu {
+      list-style-type: none;
+    }
+    nav .logo {
+      font-size: 20px;
+      padding: 7.5px 10px 7.5px 0;
+    }
+    nav .item {
+      padding: 10px;
+    }
+    nav .item.button {
+      padding: 9px 5px;
+    }
+    nav .item:not(.button) a:hover,
+    nav .item a:hover::after {
+      color: grey;
+    }
+    /* Mobile menu */
+    nav .menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav .menu li a {
+      display: block;
+      padding: 15px 5px;
+    }
+    nav .menu li.subitem a {
+      padding: 15px;
+    }
+    nav .toggle {
+      order: 1;
+      font-size: 20px;
+    }
+    nav .item.button {
+      order: 2;
+    }
+    nav .item {
+      order: 3;
+      width: 100%;
+      text-align: center;
+      display: none;
+    }
+    nav .active .item {
+      display: block;
+    }
+    nav .button.secondary {
+      /* divider between buttons and menu links */
+      border-bottom: 1px #444 solid;
+    }
+    /* Submenu up from mobile screens */
+    nav .submenu {
+      display: none;
+    }
+    nav .submenu-active .submenu {
+      display: block;
+    }
+    nav .has-submenu i {
+      font-size: 12px;
+    }
+    nav .has-submenu > a::after {
+      font-family: "Font Awesome 5 Free";
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 900;
+      content: "\f078";
+      color: white;
+      padding-left: 5px;
+    }
+    nav .subitem a {
+      padding: 10px 15px;
+    }
+    nav .submenu-active {
+      background-color: #cc1616f3;
+      border-radius: 3px;
+    }
+    
+    /* Tablet menu */
+    @media all and (min-width: 1080px) {
+      nav .menu {
+        justify-content: center;
+      }
+      nav .logo {
+        flex: 1;
+      }
+      nav .item.button {
+        width: auto;
+        order: 1;
+        display: block;
+      }
+      nav .toggle {
+        flex: 1;
+        text-align: right;
+        order: 2;
+      }
+      /* Button up from tablet screen */
+      nav .menu li.button a {
+        padding: 10px 15px;
+        margin: 5px 0;
+      }
+      nav .button a {
+        background: #cc1616f3;
+        border: 1px #cc1616f3 solid;
+      }
+      nav .button.secondary {
+        border: 0;
+      }
+      nav .button.secondary a {
+        background: transparent;
+        border: 1px #cc1616f3 solid;
+      }
+      nav .button a:hover {
+        text-decoration: none;
+      }
+      nav .button:not(.secondary) a:hover {
+        background: royalblue;
+        border-color: darkblue;
+      }
+    }
+    /* Desktop menu */
+    @media all and (min-width: 1080px) {
+      nav .menu {
+        align-items: flex-start;
+        flex-wrap: nowrap;
+        background: none;
+      }
+      nav .logo {
+        order: 0;
+      }
+      nav .item {
+        order: 1;
+        position: relative;
+        display: block;
+        width: auto;
+      }
+      nav .button {
+        order: 2;
+      }
+      nav .submenu-active .submenu {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 68px;
+        background: #cc1616f3;
+      }
+      nav .toggle {
+        display: none;
+      }
+      nav .submenu-active {
+        border-radius: 0;
+      }
+    }
+    
